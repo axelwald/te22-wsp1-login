@@ -5,6 +5,7 @@ import logger from "morgan"
 import bcrypt from "bcrypt"
 import session from "express-session"
 
+
 const app = express()
 const port = 3000
 
