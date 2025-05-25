@@ -1,0 +1,17 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<main>
+  <h1>{{ title }}</h1>
+  <p>{{ message }}</p>
+  <h2>{{ views }}</h2>
+  <form action="/createuser" method="post">
+    <input required type="text" name="username" placeholder="Användarnamn">
+    <input required type="password" name="password" placeholder="Lösenord">
+    <button type="submit">Create User</button>
+  </form>
+  <a href="/">Har du redan ett konto?</a>
+
+
+</main>
+{% endblock %}

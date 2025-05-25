@@ -5,6 +5,8 @@ import logger from "morgan"
 import bcrypt from "bcrypt"
 import session from "express-session"
 
+import indexRouter from "./routes/login.js"
+
 
 const app = express()
 const port = 3000
@@ -19,14 +21,7 @@ nunjucks.configure("views", {
 
 app.use(logger("dev"))
 app.use(express.static("public"))
-
-let myPlaintextPassword = "detlösenordsomduvillha"
-bcrypt.hash(myPlaintextPassword, 10, function(err, hash) {
-	// här får vi nu tag i lösenordets hash i variabeln hash
-	console.log(hash)
-
-
-})
+app.use("/", indexRouter)
 
 
 
