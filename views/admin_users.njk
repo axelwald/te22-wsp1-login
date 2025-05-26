@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<main>
+<h1>{{ title }}</h1>
+<p>Inloggad som {{ username }} | <a href="/logout">Logga ut</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Användarnamn</th>
+      <th>Skapad</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.created_at }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</main>
+{% endblock %}

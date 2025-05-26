@@ -5,13 +5,12 @@
   <h1>{{ title }}</h1>
   <p>{{ message }}</p>
   <h2>{{ views }}</h2>
-  <form action="/" method="post">
-    <input type="text" name="username" placeholder="Användarnamn" required>
-    <input type="password" name="password" placeholder="Lösenord" required>
-    <button type="submit">Login</button>
-  </form>
-  <a href="/createuser">Har du inte ett konto?</a>
+  
+  {% if username %}
+  <p>Inloggad som {{ username }} | <a href="/logout">Logga ut</a></p>
+  {% endif %}
 
+  <a href="/admin/users">Admin skit</a>
 
 </main>
 {% endblock %}

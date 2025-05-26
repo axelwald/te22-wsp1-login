@@ -22,18 +22,20 @@ nunjucks.configure("views", {
   express: app,
 })
 
-app.use(logger("dev"))
-app.use(express.static("public"))
-app.use("/", indexRouter)
-
-
-
 app.use(session({
   secret: "keyboard cat ",
   resave: false,
   saveUninitialized: true,
   cookie: { sameSite: true }
 }))
+
+app.use(logger("dev"))
+app.use(express.static("public"))
+app.use("/", indexRouter)
+
+
+
+
 
 
 app.get("/", (req, res) => {
